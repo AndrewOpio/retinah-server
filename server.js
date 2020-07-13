@@ -7,7 +7,7 @@ const port = 3000;
 io.on("connection", socket => {
     //recieving and sending messages
     socket.on("message", msg =>{
-        io.emit(msg.email, msg.text, msg.type);
+        io.emit(msg.receiver, msg.text, msg.type, msg.sender);
     }); 
     //emitted when a message is sent inorder to update chats
     socket.on("sent", msg =>{
