@@ -37,7 +37,7 @@ io.on("connection", socket => {
 
     //sending notifications to users by district
     socket.on("notification", msg =>{
-        io.emit("notification", msg);
+        io.emit(msg.district, msg.title, msg.message);
     });
     
     //Listening in to comments and updating the homepage
