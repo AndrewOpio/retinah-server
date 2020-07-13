@@ -8,7 +8,7 @@ io.on("connection", socket => {
     //recieving and sending messages
     socket.on("message", msg =>{
         io.emit(msg.email, msg.text, msg.type);
-    });
+    }); 
     //emitted when a message is sent inorder to update chats
     socket.on("sent", msg =>{
         io.emit("sent"+ msg.email, msg.email);
@@ -18,6 +18,17 @@ io.on("connection", socket => {
     socket.on("update", msg =>{  
         io.emit("update"+ msg.email, msg.email);
     });
+
+    //listening to posts
+    socket.on("post", msg =>{  
+        io.emit("post",  msg);
+    });
+
+     //listening to deletes
+     socket.on("delete", msg =>{  
+        io.emit("delete",  msg);
+    });
+
 
     //updating the profile pic after changing it
      socket.on("propic", msg =>{
