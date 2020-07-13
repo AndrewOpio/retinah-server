@@ -44,6 +44,6 @@ io.on("connection", socket => {
     socket.on("comment", msg =>{
         io.emit("comment"+msg.email, msg);
     });
-});
+}); 
 
-server.listen(port, () => console.log("server running on" + " " + port));
+server.listen(port, () =>{} /*console.log("server running on" + " " + port)*/);
