@@ -14,11 +14,6 @@ io.on("connection", socket => {
         io.emit("sent"+ msg.email, msg.email);
     });
 
-     //emitted when a message is sent inorder to update chats
-     socket.on("profile", msg =>{
-        io.emit("sent"+ msg.email, msg.email);
-    });
-
     //update messages from unread to read
     socket.on("update", msg =>{  
         io.emit("update"+ msg.email, msg.email);
