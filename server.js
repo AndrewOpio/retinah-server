@@ -56,4 +56,4 @@ io.on("connection", socket => {
     });
 }); 
 
-server.listen(port ,/*process.env.PORT || 5000 */ console.log("server running on" + " " + port));
+server.listen(process.env.PORT || 5000  /*console.log("server running on" + " " + port)*/);
