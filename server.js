@@ -21,7 +21,6 @@ io.on("connection", socket => {
 
     //listening to help calls
     socket.on("help", msg =>{  
-        console.log("it works");
         io.emit(msg.email+"help", "Help", msg.message);
     });
 
