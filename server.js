@@ -19,9 +19,20 @@ io.on("connection", socket => {
         io.emit("update"+ msg.email, msg.email);
     });
 
+    //listening to help calls
+    socket.on("help", msg =>{  
+        console.log("it works");
+        io.emit(msg.email+"help", "Help", msg.message);
+    });
+
     //listening to posts
     socket.on("post", msg =>{  
         io.emit("post",  msg);
+    });
+
+     //listening to circle adds
+     socket.on("circle", msg =>{  
+        io.emit("circle"+msg.email,  msg.email);
     });
 
      //listening to deletes
@@ -46,4 +57,4 @@ io.on("connection", socket => {
     });
 }); 
 
-server.listen(process.env.PORT || 5000 /*console.log("server running on" + " " + port)*/);
+server.listen(port ,/*process.env.PORT || 5000 */ console.log("server running on" + " " + port));
