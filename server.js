@@ -39,10 +39,9 @@ io.on("connection", socket => {
         io.emit("delete",  msg);
     });
 
-
     //updating the profile pic after changing it
      socket.on("propic", msg =>{
-        io.emit(msg.email, msg.text);
+        io.emit("propic"+msg.email, msg.text);
     });
 
     //sending notifications to users by district
